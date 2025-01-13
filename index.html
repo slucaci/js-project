@@ -13,14 +13,22 @@
     <title>Document</title>
   </head>
   <body>
-    <h1 class="heading"></h1>
-    <img src="assets/images/logo.png" alt="logo" class="logo" />Driving Test
-    <div class="driving-test-area"></div>
-    <div class="result-area">
-      <p class=""></p>
-      <p class="results">Correct Answers <span id="result">0</span></p>
-      <p class="results">Wrong answers <span id="incorrect">0</span></p>
-      <p class="results">Total Questions <span>27</span></p>
+    <h1 class="heading">
+      <img src="assets/images/logo.png" alt="logo" class="logo" />Driving Test
+    </h1>
+    <div class="status-bar">
+      <span id="total-questions">Total Questions: 28</span>
+      <span id="remaining-questtions">Remaining Questions:28</span>
+      <span id="correct-answers">Correct Answers: 0</span>
+      <span id="wrong-answers">Wrong Answers: 0</span>
+    </div>
+    <div class="driving-test-area">
+      <span id="question">Red Light?</span>
+    </div>
+    <div class="answers">
+      <button class="btn-a">A</button>
+      <button class="btn-b">B</button>
+      <button class="btn-c">C</button>
     </div>
     <script src="assets/js/script.js"></script>
   </body>
