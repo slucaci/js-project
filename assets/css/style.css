@@ -1,0 +1,115 @@
+/* Body CSS */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: white;
+}
+
+/* Heading css */
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(209, 206, 206);
+}
+
+.logo {
+  width: 50px;
+  margin-right: 10px;
+}
+
+/* Status bar css */
+
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f1f1f1;
+}
+
+.status-bar span {
+  margin: 0 10px;
+}
+
+/* Driving test area css */
+.driving-test-area {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.driving-test-area #question {
+  display: flex;
+  justify-content: center;
+}
+
+.answers {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.answers button {
+  width: 100px;
+  height: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.answers .btn-a {
+  background-color: #add8e6;
+}
+
+.answers .btn-b {
+  background-color: #add8e6;
+}
+
+.answers .btn-c {
+  background-color: #add8e6;
+}
+
+.answers button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Submit area CSS */
+.submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+.submit button {
+  margin-top: 30px;
+  width: 100px;
+  height: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.submit .btn-submit {
+  background-color: #f1f1f1;
+}
+.submit .btn-submit:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.submit .btn-delete {
+  background-color: #f1f1f1;
+}
+
+.submit .btn-delete:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
