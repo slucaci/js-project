@@ -4,10 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-      crossorigin="anonymous"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Driving Test</title>
@@ -21,12 +19,15 @@
       <span id="remaining-questtions">Remaining Questions:28</span>
       <span id="correct-answers">Correct Answers: 0</span>
       <span id="wrong-answers">Wrong Answers: 0</span>
+      <span id="timer">Timer: 30:00</span>
     </div>
     <div class="driving-test-area">
-      <span id="question">Red Light?</span>
-      <span id="answer-a">STOP</span>
-      <span id="answer-b">GO</span>
-      <span id="answer-c">HOLD</span>
+      <p id="question">Question:</p>
+      <div>
+        <button class="answer-btn" data-option="A">A</button>
+        <button class="answer-btn" data-option="B">B</button>
+        <button class="answer-btn" data-option="C">C</button>
+      </div>
     </div>
     <div class="answers">
       <button class="btn-a">A</button>
@@ -34,6 +35,9 @@
       <button class="btn-c">C</button>
     </div>
     <div class="submit">
+      <button class="btn-later">
+        <i class="fa-solid fa-rotate-right"></i> Answer Later
+      </button>
       <button class="btn-delete">
         <i class="fa-solid fa-xmark"></i> Delete answer
       </button>
