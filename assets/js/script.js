@@ -16,6 +16,8 @@ const questions = [
 ];
 
 let currentQuestionIndex = 0;
+let timeRemaining = 1800;
+let timer;
 
 function displayQuestion() {
   const question = questions[currentQuestionIndex];
@@ -25,10 +27,34 @@ function displayQuestion() {
   document.querySelector(".answer-btn[data-option='C']").innerText = question.C;
 }
 
-displayQuestion();
+document.querySelectorAll(".btn-submit").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    currentQuestionIndex = currentQuestionIndex + 1;
+    displayQuestion();
+  });
+});
 
-// function timerStart() {}
+function timerStart() {
+  clearInterval(timer);
+  timer = setInterval(() => {
+    timeRemaining--;
+    const minutes = Math.floor(timeRemaining / 60);
+    const seconds = timeRemaining % 60;
+    document.getElementById("timer").innerText = `Time: ${minutes}:${
+      seconds < 10 ? "0" + seconds : seconds
+    }`;
+    if (timeRemaining <= 0) {
+      clearInterval(timer);
+      displayScore();
+    }
+  }, 1000);
+}
 
-// function runTest() {}
+function runTest() {
+  displayQuestion();
+  timerStart();
+}
+
+runTest();
 
 // function questions() {}
