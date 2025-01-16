@@ -58,3 +58,15 @@ function runTest() {
 runTest();
 
 // function questions() {}
+
+// Function to open the sidebar
+function openNav() {
+  document.getElementById("mySidebar").classList.add("show");
+  document.getElementById("main").style.marginLeft = "200px";
+}
+
+// Function to close the sidebar
+function closeNav() {
+  document.getElementById("mySidebar").classList.remove("show");
+  document.getElementById("main").style.marginLeft = "0";
+}

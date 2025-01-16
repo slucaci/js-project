@@ -13,14 +13,27 @@
   <body>
     <!-- Navigation bar -->
     <div class="topnav">
-      <a href="index.html" class="active">Driving Test</a>
-      <div id="myLinks">
+      <button class="openbtn" onclick="openNav()">☰</button>
+      <a href="index.html">
+        <img src="assets/images/logo.png" alt="Logo" />
+      </a>
+      <!-- Side nav for desktop -->
+      <div id="myLinks" class="desktop-nav-links">
         <a href="index.html">Home</a>
         <a href="index.html">Home</a>
         <a href="index.html">Home</a>
       </div>
     </div>
 
+    <!-- Sidebar nav for mobile -->
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <a href="index.html">Home</a>
+      <a href="index.html">Home</a>
+      <a href="index.html">Home</a>
+    </div>
+
+    <!-- Main Content -->
     <div id="main">
       <!-- Status bar -->
       <div class="status-bar">
