@@ -11,9 +11,16 @@
     <title>Driving Test</title>
   </head>
   <body>
-    <h1 class="heading">
-      <img src="assets/images/logo.png" alt="logo" class="logo" />Driving Test
-    </h1>
+    <!-- Navigation bar -->
+    <div class="topnav">
+      <a href="index.html" class="active">Driving Test</a>
+      <div id="myLinks">
+        <a href="index.html">Home</a>
+        <a href="index.html">Home</a>
+        <a href="index.html">Home</a>
+      </div>
+    </div>
+    <!-- Status bar -->
     <div class="status-bar">
       <span id="total-questions">Total Questions: 28</span>
       <span id="remaining-questtions">Remaining Questions:28</span>
@@ -21,6 +28,7 @@
       <span id="wrong-answers">Wrong Answers: 0</span>
       <span id="timer">Timer: 30:00</span>
     </div>
+    <!-- Test area -->
     <div class="driving-test-area">
       <p id="question">Question:</p>
       <div>
@@ -29,11 +37,13 @@
         <button class="answer-btn" data-option="C">C</button>
       </div>
     </div>
+    <!-- Answer buttons -->
     <div class="answers">
       <button class="btn-a">A</button>
       <button class="btn-b">B</button>
       <button class="btn-c">C</button>
     </div>
+    <!-- Submit/Delete/Later Buttons -->
     <div class="submit">
       <button class="btn-later">
         <i class="fa-solid fa-rotate-right"></i> Answer Later
