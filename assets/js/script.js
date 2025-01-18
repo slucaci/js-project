@@ -300,7 +300,6 @@ function timerStart() {
     }`;
     if (timeRemaining <= 0) {
       clearInterval(timer);
-      displayScore();
     }
   }, 1000);
 }
