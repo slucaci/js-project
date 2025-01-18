@@ -306,14 +306,29 @@ function selectAnswer() {
 }
 
 function runTest() {
-  displayQuestion();
+  setupDisplay();
+  displayQuestion(currentQuestionIndex);
   selectAnswer();
   timerStart();
 }
 
 runTest();
 
-// function questions() {}
+// Display the User Interface
+function setupDisplay() {
+  document.querySelector(".status-bar #total-questions").innerHTML =
+    "Total questions: 28";
+  document.querySelector(
+    ".status-bar #remaining-questions"
+  ).innerText = `Remaining Questions: 28`;
+  document.querySelector(
+    ".status-bar #correct-answers"
+  ).innerText = `Correct Answers: 0`;
+  document.querySelector(
+    ".status-bar #wrong-answers"
+  ).innerText = `Wrong Answers: 0`;
+  document.querySelector(".status-bar #timer").innerText = `Time: 30:00`;
+}
 
 // Function to open the sidebar
 function openNav() {
