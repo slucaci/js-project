@@ -140,18 +140,14 @@ body {
 .driving-test-area {
   display: flex;
   flex-direction: column;
-  text-align: center;
+  text-align: left;
   margin-top: 20px;
-}
-
-.driving-test-area #question {
-  display: flex;
-  justify-content: center;
 }
 
 .choices {
   display: flex;
   flex-direction: column;
+  justify-content: left;
 }
 
 .answers {
