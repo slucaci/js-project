@@ -258,6 +258,21 @@ let currentQuestionIndex = 0;
 let timeRemaining = 1800;
 let timer;
 let selectedOptions = new Set();
+let selectedQuestions = [];
+
+function generateRandomQuestions(questionPool, numberOfQuestions) {
+  const mixedQuestions = [...questionPool];
+  const length = mixedQuestions.length;
+
+  for (let i = 0; i < length - 1; i++) {
+    const randomIndex = i + Math.floor(Math.random() * (length - i));
+    [mixedQuestions[i], mixedQuestions[randomIndex]] = [
+      mixedQuestions[randomIndex],
+      mixedQuestions[i],
+    ];
+  }
+  return mixedQuestions.slice(0, numberOfQuestions);
+}
 
 function displayQuestion() {
   const question = questions[currentQuestionIndex];
@@ -306,10 +321,12 @@ function selectAnswer() {
 }
 
 function runTest() {
+  selectedQuestions = generateRandomQuestions(questions, 28);
   setupDisplay();
   displayQuestion(currentQuestionIndex);
   selectAnswer();
   timerStart();
+  console.log(selectedQuestions);
 }
 
 runTest();
