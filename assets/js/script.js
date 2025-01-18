@@ -18,6 +18,7 @@ const questions = [
 let currentQuestionIndex = 0;
 let timeRemaining = 1800;
 let timer;
+let selectedOptions = new Set();
 
 function displayQuestion() {
   const question = questions[currentQuestionIndex];
@@ -49,9 +50,25 @@ function timerStart() {
     }
   }, 1000);
 }
+function selectAnswer() {
+  document.querySelectorAll(".answer-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+      const option = button.getAttribute("data-option");
+
+      if (selectedOptions.has(option)) {
+        selectedOptions.delete(option);
+        button.style.backgroundColor = "";
+      } else {
+        selectedOptions.add(option);
+        button.style.backgroundColor = "lightblue";
+      }
+    });
+  });
+}
 
 function runTest() {
   displayQuestion();
+  selectAnswer();
   timerStart();
 }
 
