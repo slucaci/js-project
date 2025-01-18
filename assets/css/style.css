@@ -149,6 +149,11 @@ body {
   justify-content: center;
 }
 
+.choices {
+  display: flex;
+  flex-direction: column;
+}
+
 .answers {
   display: flex;
   justify-content: center;

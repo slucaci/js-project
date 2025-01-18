@@ -23,9 +23,9 @@ let selectedOptions = new Set();
 function displayQuestion() {
   const question = questions[currentQuestionIndex];
   document.getElementById("question").innerText = question.question;
-  document.querySelector(".answer-btn[data-option='A']").innerText = question.A;
-  document.querySelector(".answer-btn[data-option='B']").innerText = question.B;
-  document.querySelector(".answer-btn[data-option='C']").innerText = question.C;
+  document.getElementById("answer1").innerText = "A. " + question.A;
+  document.getElementById("answer2").innerText = "B. " + question.B;
+  document.getElementById("answer3").innerText = "C. " + question.C;
 }
 
 document.querySelectorAll(".btn-submit").forEach((btn) => {
@@ -51,7 +51,7 @@ function timerStart() {
   }, 1000);
 }
 function selectAnswer() {
-  document.querySelectorAll(".answer-btn").forEach((button) => {
+  document.querySelectorAll(".answers1").forEach((button) => {
     button.addEventListener("click", () => {
       const option = button.getAttribute("data-option");
 
@@ -60,7 +60,7 @@ function selectAnswer() {
         button.style.backgroundColor = "";
       } else {
         selectedOptions.add(option);
-        button.style.backgroundColor = "lightblue";
+        button.style.backgroundColor = "red";
       }
     });
   });
