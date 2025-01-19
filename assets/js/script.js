@@ -261,6 +261,7 @@ let selectedOptions = new Set();
 let selectedQuestions = [];
 let correctAnswers = 0;
 let wrongAnswers = 0;
+let answerLaterList = [];
 
 // function to generate 28 random questions
 function generateRandomQuestions(questionPool, numberOfQuestions) {
@@ -395,6 +396,22 @@ function selectAnswer() {
       alert("Answers deleted.");
     } else {
       alert("You didnt select any answers.");
+    }
+  });
+  // Answer later
+  document.querySelector(".btn-later").addEventListener("click", () => {
+    answerLaterList.push(selectedQuestions[currentQuestionIndex]);
+    selectedQuestions.splice(currentQuestionIndex, 1);
+
+    if (currentQuestionIndex < selectedQuestions.length) {
+      displayQuestion(currentQuestionIndex);
+    } else if (answerLaterList.length > 0) {
+      selectedQuestions.push(...answerLaterList);
+      answerLaterList = [];
+      displayQuestion(currentQuestionIndex);
+    }
+    if (wrongAnswers > 6) {
+      alert("You have exceeded the maximum number of wrong answers (6).");
     }
   });
 }
