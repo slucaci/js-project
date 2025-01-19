@@ -383,6 +383,20 @@ function selectAnswer() {
       displayQuestion(currentQuestionIndex);
     } else alert("Maximum questions.");
   });
+  // Delete answer
+  document.querySelector(".btn-delete").addEventListener("click", () => {
+    if (selectedOptions.size > 0) {
+      document.querySelectorAll(".answers1").forEach((btn) => {
+        if (selectedOptions.has(btn.getAttribute("data-option"))) {
+          btn.style.backgroundColor = "";
+        }
+      });
+      selectedOptions.clear();
+      alert("Answers deleted.");
+    } else {
+      alert("You didnt select any answers.");
+    }
+  });
 }
 
 // function to update the bar
