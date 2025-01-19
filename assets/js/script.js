@@ -416,8 +416,7 @@ function selectAnswer() {
       selectedQuestions.push(...answerLaterList);
       answerLaterList = [];
       displayQuestion(currentQuestionIndex);
-    }
-    if (wrongAnswers > 6) {
+    } else if (wrongAnswers > 6) {
       alert("You have exceeded the maximum number of wrong answers (6).");
       displayResult();
     } else {
