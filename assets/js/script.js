@@ -430,6 +430,7 @@ function selectAnswer() {
 function displayResult() {
   clearInterval(timer);
   document.getElementById("main").innerHTML = `
+        <div class="result">
         <h3>Test Completed!</h3>
         <p>Total Questions: ${selectedQuestions.length}</p>
         <p>Correct Answers: ${correctAnswers}</p>
@@ -441,6 +442,7 @@ function displayResult() {
             ? "Congratulations! You passed the test!"
             : "You did not pass. Please try again."
         }</p>
+        </div>
       `;
 }
 
