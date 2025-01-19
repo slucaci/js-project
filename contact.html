@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Driving Test</title>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "7peCkt2rRhRDcgCfR",
+        });
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <div class="topnav">
+      <button class="openbtn" onclick="openNav()">☰</button>
+      <a href="index.html">
+        <img src="assets/images/logo.png" alt="Logo" />
+      </a>
+      <!-- Side nav for desktop -->
+      <div id="myLinks" class="desktop-nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="index.html">Home</a>
+      </div>
+    </div>
+
+    <!-- Sidebar nav for mobile -->
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="index.html">Home</a>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-contact">
+      <div class="form">
+        <form>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" onclick="sendMail()">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <h3>Find us on:</h3>
+        <ul class="socials">
+          <li>
+            <a href="https://www.tiktok.com/" target="_blank"
+              ><i class="fa-brands fa-tiktok"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/" target="_blank"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>copyright &copy; Driving Theory Test 2025</p>
+      </div>
+    </footer>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

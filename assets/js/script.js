@@ -477,4 +477,18 @@ function closeNav() {
   document.getElementById("main").style.marginLeft = "0";
 }
 
+// Function to send email
+function sendMail() {
+  let parms = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    subject: document.getElementById("subject").value,
+    message: document.getElementById("message").value,
+  };
+
+  emailjs
+    .send("service_5vv308s", "template_6chjj25", parms)
+    .then(alert("Email was sent!"));
+}
+
 runTest();
