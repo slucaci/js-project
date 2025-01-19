@@ -10,7 +10,6 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: white;
 }
 
 #main {
@@ -268,4 +267,19 @@ footer {
 .socials a {
   text-decoration: none;
   color: #fff;
+}
+
+/* Center the main content */
+#main-index {
+  background-image: url("/assets/images/background.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
