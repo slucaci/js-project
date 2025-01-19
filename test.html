@@ -35,17 +35,44 @@
 
     <!-- Main Content -->
     <div id="main">
-      <h1>Welcome to the Driving Theory Test!</h1>
-      <form id="start-form">
-        <label for="examinee-name-input">Enter your name:</label>
-        <input
-          type="text"
-          id="examinee-name-input"
-          placeholder="Your name"
-          required
-        />
-        <button id="start-button" type="submit">Start Test</button>
-      </form>
+      <!-- Status bar -->
+      <div class="status-bar">
+        <span id="total-questions"></span>
+        <span id="remaining-questions"></span>
+        <span id="correct-answers"></span>
+        <span id="wrong-answers"></span>
+        <span id="timer"></span>
+      </div>
+
+      <!-- Test area -->
+      <div class="driving-test-area">
+        <p id="question">Question:</p>
+        <div class="choices">
+          <span id="answer1">A</span>
+          <span id="answer2">B</span>
+          <span id="answer3">C</span>
+        </div>
+      </div>
+
+      <!-- Answer buttons -->
+      <div class="answers">
+        <button class="btn-a answers1" data-option="A">A</button>
+        <button class="btn-b answers1" data-option="B">B</button>
+        <button class="btn-c answers1" data-option="C">C</button>
+      </div>
+
+      <!-- Submit/Delete/Later Buttons -->
+      <div class="submit">
+        <button class="btn-later">
+          <i class="fa-solid fa-rotate-right"></i> Answer Later
+        </button>
+        <button class="btn-delete">
+          <i class="fa-solid fa-xmark"></i> Delete answer
+        </button>
+        <button class="btn-submit">
+          <i class="fa-solid fa-check"></i> Send Answer
+        </button>
+      </div>
     </div>
 
     <!-- Footer -->
