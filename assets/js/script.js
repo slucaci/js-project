@@ -259,7 +259,10 @@ let timeRemaining = 1800;
 let timer;
 let selectedOptions = new Set();
 let selectedQuestions = [];
+let correctAnswers = 0;
+let wrongAnswers = 0;
 
+// function to generate 28 random questions
 function generateRandomQuestions(questionPool, numberOfQuestions) {
   const mixedQuestions = [...questionPool];
   const length = mixedQuestions.length;
@@ -274,20 +277,20 @@ function generateRandomQuestions(questionPool, numberOfQuestions) {
   return mixedQuestions.slice(0, numberOfQuestions);
 }
 
-function displayQuestion() {
-  const question = questions[currentQuestionIndex];
+// function to display a question
+function displayQuestion(index) {
+  const question = selectedQuestions[index];
   document.getElementById("question").innerText = question.question;
   document.getElementById("answer1").innerText = "A. " + question.A;
   document.getElementById("answer2").innerText = "B. " + question.B;
   document.getElementById("answer3").innerText = "C. " + question.C;
-}
+  selectedOptions.clear();
 
-document.querySelectorAll(".btn-submit").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    currentQuestionIndex = currentQuestionIndex + 1;
-    displayQuestion();
-  });
-});
+  document
+    .querySelectorAll(".answers1")
+    .forEach((btn) => (btn.style.backgroundColor = ""));
+  statsBar();
+}
 
 function timerStart() {
   clearInterval(timer);
@@ -303,24 +306,16 @@ function timerStart() {
     }
   }, 1000);
 }
-function selectAnswer() {
-  document.querySelectorAll(".answers1").forEach((button) => {
-    button.addEventListener("click", () => {
-      const option = button.getAttribute("data-option");
-
-      if (selectedOptions.has(option)) {
-        selectedOptions.delete(option);
-        button.style.backgroundColor = "";
-      } else {
-        selectedOptions.add(option);
-        button.style.backgroundColor = "red";
-      }
-    });
-  });
-}
 
 function runTest() {
   selectedQuestions = generateRandomQuestions(questions, 28);
+  currentQuestionIndex = 0;
+  correctAnswers = 0;
+  wrongAnswers = 0;
+  answerLaterList = [];
+  selectedOptions = new Set();
+  timeRemaining = 1800;
+
   setupDisplay();
   displayQuestion(currentQuestionIndex);
   selectAnswer();
@@ -328,12 +323,11 @@ function runTest() {
   console.log(selectedQuestions);
 }
 
-runTest();
-
 // Display the User Interface
 function setupDisplay() {
-  document.querySelector(".status-bar #total-questions").innerHTML =
-    "Total questions: 28";
+  document.querySelector(
+    ".status-bar #total-questions"
+  ).innerText = `Total Questions: 28`;
   document.querySelector(
     ".status-bar #remaining-questions"
   ).innerText = `Remaining Questions: 28`;
@@ -344,6 +338,69 @@ function setupDisplay() {
     ".status-bar #wrong-answers"
   ).innerText = `Wrong Answers: 0`;
   document.querySelector(".status-bar #timer").innerText = `Time: 30:00`;
+}
+
+// Buttons
+function selectAnswer() {
+  document.querySelectorAll(".answers1").forEach((button) => {
+    button.addEventListener("click", () => {
+      const option = button.getAttribute("data-option");
+      if (selectedOptions.has(option)) {
+        selectedOptions.delete(option);
+        button.style.backgroundColor = "";
+      } else {
+        selectedOptions.add(option);
+        button.style.backgroundColor = "red";
+      }
+    });
+  });
+  // Submit answer
+  document.querySelector(".btn-submit").addEventListener("click", () => {
+    if (selectedOptions.size === 0) {
+      alert("Please select at least one answer before submitting.");
+      return;
+    }
+
+    const questionData = selectedQuestions[currentQuestionIndex];
+    const correctSet = new Set(questionData.correct);
+    const isCorrect =
+      selectedOptions.size === correctSet.size &&
+      [...selectedOptions].every((option) => correctSet.has(option));
+
+    if (isCorrect) {
+      correctAnswers++;
+    } else {
+      wrongAnswers++;
+    }
+    if (wrongAnswers > 6) {
+      alert("You have exceeded the maximum number of wrong answers (6).");
+
+      return;
+    }
+
+    currentQuestionIndex++;
+    if (currentQuestionIndex < selectedQuestions.length) {
+      displayQuestion(currentQuestionIndex);
+    } else alert("Maximum questions.");
+  });
+}
+
+// function to update the bar
+function statsBar() {
+  document.getElementById(
+    "remaining-questions"
+  ).innerText = `Remaining Questions: ${
+    selectedQuestions.length +
+    answerLaterList.length -
+    wrongAnswers -
+    correctAnswers
+  }`;
+  document.getElementById(
+    "correct-answers"
+  ).innerText = `Correct Answers: ${correctAnswers}`;
+  document.getElementById(
+    "wrong-answers"
+  ).innerText = `Wrong Answers: ${wrongAnswers}`;
 }
 
 // Function to open the sidebar
@@ -357,3 +414,5 @@ function closeNav() {
   document.getElementById("mySidebar").classList.remove("show");
   document.getElementById("main").style.marginLeft = "0";
 }
+
+runTest();
