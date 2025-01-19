@@ -433,3 +433,74 @@ footer {
 .result button:hover {
   background-color: #032d41;
 }
+
+/* CSS for contact page */
+
+#main-contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 40px;
+}
+
+.form,
+.address {
+  flex: 1;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #333333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.address {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  line-height: 1.6;
+}
+
+.address h3 {
+  font-size: 1.5rem;
+  color: #054a6a;
+  margin-bottom: 15px;
+}
+
+.address p {
+  margin-bottom: 15px;
+  color: #333333;
+  font-size: 1rem;
+}
+
+.address strong {
+  color: #054a6a;
+}
+
+button[type="submit"] {
+  background-color: #054a6a;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button[type="submit"]:hover {
+  background-color: #032d41;
+}
