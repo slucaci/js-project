@@ -304,6 +304,7 @@ function timerStart() {
     }`;
     if (timeRemaining <= 0) {
       clearInterval(timer);
+      displayResult();
     }
   }, 1000);
 }
@@ -375,14 +376,20 @@ function selectAnswer() {
     }
     if (wrongAnswers > 6) {
       alert("You have exceeded the maximum number of wrong answers (6).");
-
+      displayResult();
       return;
     }
 
     currentQuestionIndex++;
     if (currentQuestionIndex < selectedQuestions.length) {
       displayQuestion(currentQuestionIndex);
-    } else alert("Maximum questions.");
+    } else if (answerLaterList.length > 0) {
+      selectedQuestions.push(...answerLaterList);
+      answerLaterList = [];
+      displayQuestion(currentQuestionIndex);
+    } else {
+      displayResult();
+    }
   });
   // Delete answer
   document.querySelector(".btn-delete").addEventListener("click", () => {
@@ -412,8 +419,29 @@ function selectAnswer() {
     }
     if (wrongAnswers > 6) {
       alert("You have exceeded the maximum number of wrong answers (6).");
+      displayResult();
+    } else {
+      displayResult();
     }
   });
+}
+
+// Function to display the final result
+function displayResult() {
+  clearInterval(timer);
+  document.getElementById("main").innerHTML = `
+        <h3>Test Completed!</h3>
+        <p>Total Questions: ${selectedQuestions.length}</p>
+        <p>Correct Answers: ${correctAnswers}</p>
+        <p>Wrong Answers: ${wrongAnswers}</p>
+        <p>${
+          wrongAnswers > 6
+            ? "You failed because you exceeded the maximum number of wrong answers."
+            : correctAnswers >= 20
+            ? "Congratulations! You passed the test!"
+            : "You did not pass. Please try again."
+        }</p>
+      `;
 }
 
 // function to update the bar
