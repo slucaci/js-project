@@ -442,6 +442,7 @@ function displayResult() {
             ? "Congratulations! You passed the test!"
             : "You did not pass. Please try again."
         }</p>
+        <button onclick="window.location.href='test.html'">Retake Test</button>
         </div>
       `;
 }

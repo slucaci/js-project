@@ -418,3 +418,18 @@ footer {
   margin-bottom: 10px;
   line-height: 1.6;
 }
+
+.result button {
+  background-color: #054a6a;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.result button:hover {
+  background-color: #032d41;
+}
