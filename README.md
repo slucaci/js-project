@@ -1,131 +1,277 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Money Monitor
 
-Welcome USER_NAME,
+![Image](assets/documentation/amiresponsive.png)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Visit the site deployed on GitHub: [Driving Theory Test](https://slucaci.github.io/js-project/)
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+# CONTENTS
 
-## Gitpod Reminders
+- [User Experience](#user-experience)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+  - [User Stories](#user-stories)
 
-`python3 -m http.server`
+- [How To use](#how-to-use)
 
-A blue button should appear to click: _Make Public_,
+- [Design](#design)
 
-Another blue button should appear to click: _Open Browser_.
+  - [Colour Scheme](#colour-scheme)
+  - [Typography](#typography)
+  - [Wireframes](#wireframes)
+  - [Accessibility](#accessibility)
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+- [Features](#features)
 
-A blue button should appear to click: _Make Public_,
+  - [Existing Features](#existing-features)
+  - [Future Features](#future-features)
 
-Another blue button should appear to click: _Open Browser_.
+- [Bugs](#bugs)
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+  - [Solved Bugs](#solved-bugs)
+  - [Remaining Bugs](#remaining-bugs)
 
-To log into the Heroku toolbelt CLI:
+- [Technologies Used](#technologies-used)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+  - [Languages Used](#languages-used)
+  - [Frameworks, Libraries & Programs Used](#frameworks-libraries--programs-used)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+- [Deployment & Local Development](#deployment--local-development)
 
-### Connecting your Mongo database
+  - [Deployment](#deployment)
+  - [Local Development](#local-development)
+    - [How to Fork](#how-to-fork)
+    - [How to Clone](#how-to-clone)
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+- [Testing](#testing)
+- [Credits](#credits)
 
-------
+## User Experience
 
-## Release History
+### User Stories
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+1. As a first-time visitor
 
-**June 18, 2024,** Add Mongo back into template
+   - I want to understand the purpose of the app and how it works
+   - I want to navigate through the app easily and access the test page without confusion
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+2. As a returning user
+   - I want the ability to retake the test and see a new set of random questions
 
-**May 28 2024:** Fix Mongo and Links installs
+## How To Use
 
-**April 26 2024:** Update node version to 16
+### Home Page
 
-**September 20 2023:** Update Python version to 3.9.17.
+![Image](assets/documentation/indexpage.png)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- Enter your name in the provided input field.
+- Click the Start Test button.
+- After submitting, you will be redirected to the test page.
+- On the test page, respond to the questions presented.
+- Once all questions are completed, or if you reach the maximum limit of 6 incorrect answers, the result will be displayed.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+![Image](assets/documentation/result.png)
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+### Test page
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+![Image](assets/documentation/testpage.png)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- Open the website.
+- Read the rules for the test on the about.html page.
+- Navigate to the home.html page and enter your name.
+- Click the Start Test button to begin.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+### About Page
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+![Image](assets/documentation/aboutpage.png)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- Open the About Page to read detailed information about the test.
+- Familiarize yourself with the rules and guidelines provided to ensure you understand the process.
+- Use the navigation links or buttons on the page to proceed to the Home Page when you're ready to start.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### Contact Page
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+![Image](assets/documentation/contactpage.png)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+- Fill out the contact form with your details.
+- Submit the form and wait for a response.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### Color Scheme
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+| **Color Name** | **Hex Code**
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+| **Dark Gray** | `#333`  
+| **Black** | `#111`  
+| **Light Blue** | `#add8e6`  
+| **Orange** | `#ff8c00`  
+| **Green** | `#008000`  
+| **Red** | `#FF0000`  
+| **Yellow** | `#FFD700`
+| **Light Gray** | `#f1f1f1`  
+| **Off White** | `#f4f4f4`  
+| **Medium Gray** | `#818181`  
+| **Light Gray Border** | `#cccccc`
 
-------
+### Typography
 
-## FAQ about the uptime script
+The Driving Theory Test uses the Roboto font family, which is clean, modern, and easy to read.
 
-**Why have you added this script?**
+- Backup Fonts
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+  The following backup font is used in case the primary font is unavailable:
+  sans-serif
 
-**How will this affect me?**
+### Wireframes
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+I used balsamiq for wireframes.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+**Home page**
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+![Image](assets/documentation/balsamiqindex.png)
 
-**So….?**
+**About page**
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+![Image](assets/documentation/balsamiqabout.png)
 
-**Can I opt out?**
+**Contact page**
+![Image](assets/documentation/balsamiqcontact.png)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+## Features
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+### Existing Features
 
-**Anything more?**
+#### 1. Test Page
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+- Users can access the test page through the website.
+- Provides clear instructions about the test on the **about.html** page.
+- Allows users to input their name on the **index.html** page before starting the test.
+- Includes a "Start Test" button to begin the test process
 
----
+#### 2. Contact Page
 
-Happy coding!
+- A dedicated contact form allows users to provide their details for inquiries or feedback
+- The form validates input to ensure all required fields are completed
+- The form sends a real email using **EmailJS** for seamless email functionality
+
+#### 3. Responsive Design
+
+- The website is fully responsive across different screen sizes.
+- Layout adapts for mobile, tablet, and desktop.
+
+#### 4. User-Friendly Navigation
+
+- Intuitive navigation bar for easy access to the Home Page, About Page, and Contact Page.
+- Clear instructions provided on each page to guide users.
+
+### Future Features
+
+#### 1. User Accounts
+
+- Enable users to create accounts to save their test progress and history.
+- Allow users to review past test results and track their performance over time.
+
+#### 2. Multi-Language Support
+
+- Expand the platform to support multiple languages, making it accessible to a wider audience.
+- Allow users to switch between languages seamlessly.
+
+#### 3. Mobile Application
+
+- Develop a mobile app for Android and iOS
+- Include offline mode functionality for users to take tests without internet.
+
+## Bugs
+
+### Solved Bugs
+
+1. Fixed input validation.
+
+   - The program didn't handle empty or invalid inputs.
+   - To solve this bug, input was checked for empty entries and a message is displayed.
+
+2. Fixed random question duplication
+   - The same question appeared multiple times in a single test session.
+   - Updated the random question generation logic to shuffle the question pool and ensure unique selection
+3. Fixed non-responsive mobile navigation
+   - The navigation menu was not functioning correctly on smaller screens.
+   - Added a responsive mobile navigation menu and resolved JavaScript errors in the openNav() and closeNav() functions
+4. Fixed incorrect answer validation
+   - The app marked correct answers as incorrect for some multiple choice questions
+   - Adjusted the answer validation logic to handle multiple correct answers properly
+
+### Remaining Bugs
+
+- No known remaining bugs.
+
+## Technologies Used
+
+#### Languages Used
+
+HTML, CSS and JavaScript, EmailJs.
+
+#### Frameworks, Libraries & Programs Used
+
+- [README Editor](https://readme.so/editor) - to write the code for readme file
+- [ Visual Studio](https://code.visualstudio.com/) - to write the HTML/CSS/JS code
+
+- [ Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - a VSCode Extension to format the code
+
+- [Balsamiq](https://balsamiq.com/) - for the wireframes.
+
+- [Cloud Convert](https://cloudconvert.com/webp-converter) - to convert the images into the webp format
+
+- [Github](https://github.com/) - to manage the website
+
+- [Google Fonts](https://fonts.google.com/)
+
+- [Developer Tools](https://developer.chrome.com/docs/devtools) - to arrange the items on the page, to view the pages on different formats
+
+## Deployment & Local Development
+
+### Deployment
+
+The site is deployed using GitHub Pages on - [Driving Theory Test](https://slucaci.github.io/js-project/)
+
+Steps to deploy on github pages:
+
+1. Login to your Github Account
+2. Go to: [slucaci/js-project](https://github.com/slucaci/js-project).
+3. Click the settings button in the middle top of the page
+4. Select pages in the left hand side
+5. Select main branch and press save.
+6. The site is deployed and live using github.
+
+The site is deployed using GitHub Pages on - [GymTracker](https://slucaci.github.io/JavaScriptProject/index.html)
+
+Steps to deploy on github pages:
+
+1. Login to your Github Account
+2. Go to: [slucaci/HTMLCSS](https://slucaci.github.io/JavaScriptProject/index.html).
+3. Click the settings button in the middle top of the page
+4. Select pages in the left hand side
+5. Select main branch and press save.
+6. The site is deployed and live using github.
+
+### Local Development
+
+#### How to Fork
+
+To fork the repository:
+
+1. Login to your Github Account.
+2. Go to: [slucaci/js-project](https://github.com/slucaci/js-project)
+3. Click the Fork button in the top right corner.
+
+#### How to Clone
+
+To clone the repository:
+
+1. Login to your Github Account.
+2. Go to: [slucaci/js-project](https://github.com/slucaci/js-project)
+3. On the repository's main page, find the green "Code" button located towards the right side of the page.
+4. Copy the URL provided in the textbox.
+5. Type 'git clone' into the terminal and then paste the link you copied in step 4. Press enter.
+
+## Testing
+
+Check the [TESTING.md](TESTING.md) file for a detailed summary of all testing procedures conducted.
+
+## Credits
