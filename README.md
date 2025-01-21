@@ -78,6 +78,8 @@ Visit the site deployed on GitHub: [Driving Theory Test](https://slucaci.github.
 - Read the rules for the test on the about.html page.
 - Navigate to the home.html page and enter your name.
 - Click the Start Test button to begin.
+- During the test, you can use the Answer Later button to skip a question and revisit it later
+- To delete all selected answers, you can either press the "A," "B," or "C" buttons again to deselect them, or use the **Delete Answer** button to clear all selections at once
 
 ### About Page
 
@@ -275,3 +277,9 @@ To clone the repository:
 Check the [TESTING.md](TESTING.md) file for a detailed summary of all testing procedures conducted.
 
 ## Credits
+
+- The Slack channel from Code Institute provided helpful answers to my questions during the project.
+- **Code Institute Course:** A valuable resource for learning and building this project.
+- [CodeEasy](https://www.youtube.com/watch?v=BgVjild0C9A&t=322s&ab_channel=CodeEasy) Guided me on how to implement EmailJS for email functionality.
+- [W3school](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_collapse_sidebar) Helped me learn how to code a collapsible sidebar.
+- [W3schools](https://www.w3schools.com/jsref/jsref_random.asp) Provided insights on generating random questions using JavaScript.
