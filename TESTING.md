@@ -1,8 +1,8 @@
-# Gym Tracker
+# Driving Theory Test
 
-![Image](assets/documentation/GymWorkoutamiresponsive.png)
+![Image](assets/documentation/amiresponsive.png)
 
-Visit the site deployed on github: [GymTracker](https://slucaci.github.io/JavaScriptProject/index.html)
+Visit the site deployed on GitHub: [Driving Theory Test](https://slucaci.github.io/js-project/)
 
 ## CONTENTS
 
@@ -33,13 +33,13 @@ Visit the site deployed on github: [GymTracker](https://slucaci.github.io/JavaSc
 - [Contact Page](https://slucaci.github.io/js-project/contact.html) - 0 errors
   ![HTML Validator](assets/documentation/contactpagetest.png)
 
+  [ CSS W3C](https://jigsaw.w3.org/css-validator/) was used to validate the CSS code.
+  ![CSS Validator](assets/documentation/cssvalidator.png)
+
 ### Jshint
 
 [Jshint](https://jshint.com/) to validate JS Code - 0 errors
 ![JavaScript Validator](assets/documentation/jshint.png)
-
-[ CSS W3C](https://jigsaw.w3.org/css-validator/) was used to validate the CSS code.
-![CSS Validator](assets/documentation/cssvalidator.png)
 
 ### LightHouse
 
